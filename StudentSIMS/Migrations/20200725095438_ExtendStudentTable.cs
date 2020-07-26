@@ -1,0 +1,96 @@
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
+
+namespace StudentSIMS.Migrations
+{
+    public partial class ExtendStudentTable : Migration
+    {
+        protected override void Up(MigrationBuilder migrationBuilder)
+        {
+            migrationBuilder.AlterColumn<string>(
+                name: "lastName",
+                table: "Student",
+                maxLength: 64,
+                nullable: false,
+                oldClrType: typeof(string),
+                oldType: "nvarchar(max)",
+                oldNullable: true);
+
+            migrationBuilder.AlterColumn<string>(
+                name: "firstName",
+                table: "Student",
+                maxLength: 64,
+                nullable: false,
+                oldClrType: typeof(string),
+                oldType: "nvarchar(max)",
+                oldNullable: true);
+
+            migrationBuilder.AlterColumn<string>(
+                name: "emailAddress",
+                table: "Student",
+                maxLength: 128,
+                nullable: true,
+                oldClrType: typeof(string),
+                oldType: "nvarchar(max)",
+                oldNullable: true);
+
+            migrationBuilder.AddColumn<string>(
+                name: "middleName",
+                table: "Student",
+                maxLength: 64,
+                nullable: true);
+
+            migrationBuilder.AddColumn<int>(
+                name: "phoneNumber",
+                table: "Student",
+                nullable: false,
+                defaultValue: 0);
+
+            migrationBuilder.AddColumn<DateTime>(
+                name: "timeCreated",
+                table: "Student",
+                nullable: false,
+                defaultValue: new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified));
+        }
+
+        protected override void Down(MigrationBuilder migrationBuilder)
+        {
+            migrationBuilder.DropColumn(
+                name: "middleName",
+                table: "Student");
+
+            migrationBuilder.DropColumn(
+                name: "phoneNumber",
+                table: "Student");
+
+            migrationBuilder.DropColumn(
+                name: "timeCreated",
+                table: "Student");
+
+            migrationBuilder.AlterColumn<string>(
+                name: "lastName",
+                table: "Student",
+                type: "nvarchar(max)",
+                nullable: true,
+                oldClrType: typeof(string),
+                oldMaxLength: 64);
+
+            migrationBuilder.AlterColumn<string>(
+                name: "firstName",
+                table: "Student",
+                type: "nvarchar(max)",
+                nullable: true,
+                oldClrType: typeof(string),
+                oldMaxLength: 64);
+
+            migrationBuilder.AlterColumn<string>(
+                name: "emailAddress",
+                table: "Student",
+                type: "nvarchar(max)",
+                nullable: true,
+                oldClrType: typeof(string),
+                oldMaxLength: 128,
+                oldNullable: true);
+        }
+    }
+}
