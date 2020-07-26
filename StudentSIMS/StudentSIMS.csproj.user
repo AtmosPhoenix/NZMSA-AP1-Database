@@ -10,5 +10,6 @@
     <WebStackScaffolding_LayoutPageFile />
     <WebStackScaffolding_DbContextTypeFullName>StudentSIMS.Data.StudentContext</WebStackScaffolding_DbContextTypeFullName>
     <WebStackScaffolding_IsAsyncSelected>False</WebStackScaffolding_IsAsyncSelected>
+    <NameOfLastUsedPublishProfile>ap1-msa-studentsims-2020 - Web Deploy</NameOfLastUsedPublishProfile>
   </PropertyGroup>
 </Project>
